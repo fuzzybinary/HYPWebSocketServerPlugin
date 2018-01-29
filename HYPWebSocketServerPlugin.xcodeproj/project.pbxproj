@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22B1728A201FCA6B00DC8059 /* HYPWebSocketServerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B17284201FCA6A00DC8059 /* HYPWebSocketServerPlugin.m */; };
+		22B1728B201FCA6B00DC8059 /* HYPWebSocketMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B17285201FCA6A00DC8059 /* HYPWebSocketMessage.h */; };
+		22B1728C201FCA6B00DC8059 /* HYPWebSocketServerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B17286201FCA6A00DC8059 /* HYPWebSocketServerPlugin.h */; };
+		22B1728D201FCA6B00DC8059 /* HYPWebSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B17287201FCA6A00DC8059 /* HYPWebSocketMessage.m */; };
+		22B1728E201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B17288201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h */; };
+		22B1728F201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B17289201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m */; };
+		22B17291201FCA8400DC8059 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 22B17290201FCA8400DC8059 /* Resources */; };
+		22B17294201FCC5000DC8059 /* PocketSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B17293201FCC5000DC8059 /* PocketSocket.framework */; };
+		22B17296201FCD2C00DC8059 /* HyperionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B17295201FCD2C00DC8059 /* HyperionCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22B17279201FCA4400DC8059 /* HYPWebSocketServerPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HYPWebSocketServerPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B1727D201FCA4400DC8059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22B17284201FCA6A00DC8059 /* HYPWebSocketServerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPWebSocketServerPlugin.m; sourceTree = "<group>"; };
+		22B17285201FCA6A00DC8059 /* HYPWebSocketMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPWebSocketMessage.h; sourceTree = "<group>"; };
+		22B17286201FCA6A00DC8059 /* HYPWebSocketServerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPWebSocketServerPlugin.h; sourceTree = "<group>"; };
+		22B17287201FCA6A00DC8059 /* HYPWebSocketMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPWebSocketMessage.m; sourceTree = "<group>"; };
+		22B17288201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPWebSocketServerPluginModule.h; sourceTree = "<group>"; };
+		22B17289201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPWebSocketServerPluginModule.m; sourceTree = "<group>"; };
+		22B17290201FCA8400DC8059 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		22B17293201FCC5000DC8059 /* PocketSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PocketSocket.framework; path = Carthage/Build/iOS/PocketSocket.framework; sourceTree = "<group>"; };
+		22B17295201FCD2C00DC8059 /* HyperionCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HyperionCore.framework; path = Carthage/Build/iOS/HyperionCore.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22B17275201FCA4400DC8059 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B17294201FCC5000DC8059 /* PocketSocket.framework in Frameworks */,
+				22B17296201FCD2C00DC8059 /* HyperionCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22B1726F201FCA4400DC8059 = {
+			isa = PBXGroup;
+			children = (
+				22B1727B201FCA4400DC8059 /* HYPWebSocketServerPlugin */,
+				22B1727A201FCA4400DC8059 /* Products */,
+				22B17292201FCC5000DC8059 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		22B1727A201FCA4400DC8059 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22B17279201FCA4400DC8059 /* HYPWebSocketServerPlugin.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22B1727B201FCA4400DC8059 /* HYPWebSocketServerPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				22B17290201FCA8400DC8059 /* Resources */,
+				22B17285201FCA6A00DC8059 /* HYPWebSocketMessage.h */,
+				22B17287201FCA6A00DC8059 /* HYPWebSocketMessage.m */,
+				22B17286201FCA6A00DC8059 /* HYPWebSocketServerPlugin.h */,
+				22B17284201FCA6A00DC8059 /* HYPWebSocketServerPlugin.m */,
+				22B17288201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h */,
+				22B17289201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m */,
+				22B1727D201FCA4400DC8059 /* Info.plist */,
+			);
+			path = HYPWebSocketServerPlugin;
+			sourceTree = "<group>";
+		};
+		22B17292201FCC5000DC8059 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22B17295201FCD2C00DC8059 /* HyperionCore.framework */,
+				22B17293201FCC5000DC8059 /* PocketSocket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		22B17276201FCA4400DC8059 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B1728E201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h in Headers */,
+				22B1728B201FCA6B00DC8059 /* HYPWebSocketMessage.h in Headers */,
+				22B1728C201FCA6B00DC8059 /* HYPWebSocketServerPlugin.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		22B17278201FCA4400DC8059 /* HYPWebSocketServerPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22B17281201FCA4400DC8059 /* Build configuration list for PBXNativeTarget "HYPWebSocketServerPlugin" */;
+			buildPhases = (
+				22B17274201FCA4400DC8059 /* Sources */,
+				22B17275201FCA4400DC8059 /* Frameworks */,
+				22B17276201FCA4400DC8059 /* Headers */,
+				22B17277201FCA4400DC8059 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HYPWebSocketServerPlugin;
+			productName = HyperionWebSocketServer;
+			productReference = 22B17279201FCA4400DC8059 /* HYPWebSocketServerPlugin.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22B17270201FCA4400DC8059 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "WillowTree, Inc";
+				TargetAttributes = {
+					22B17278201FCA4400DC8059 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 22B17273201FCA4400DC8059 /* Build configuration list for PBXProject "HYPWebSocketServerPlugin" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 22B1726F201FCA4400DC8059;
+			productRefGroup = 22B1727A201FCA4400DC8059 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22B17278201FCA4400DC8059 /* HYPWebSocketServerPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22B17277201FCA4400DC8059 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B17291201FCA8400DC8059 /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22B17274201FCA4400DC8059 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B1728A201FCA6B00DC8059 /* HYPWebSocketServerPlugin.m in Sources */,
+				22B1728F201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m in Sources */,
+				22B1728D201FCA6B00DC8059 /* HYPWebSocketMessage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		22B1727F201FCA4400DC8059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		22B17280201FCA4400DC8059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		22B17282201FCA4400DC8059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7UMFPW78PV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HYPWebSocketServerPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.HyperionWebSocketServer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22B17283201FCA4400DC8059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7UMFPW78PV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = HYPWebSocketServerPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.HyperionWebSocketServer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22B17273201FCA4400DC8059 /* Build configuration list for PBXProject "HYPWebSocketServerPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B1727F201FCA4400DC8059 /* Debug */,
+				22B17280201FCA4400DC8059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22B17281201FCA4400DC8059 /* Build configuration list for PBXNativeTarget "HYPWebSocketServerPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22B17282201FCA4400DC8059 /* Debug */,
+				22B17283201FCA4400DC8059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22B17270201FCA4400DC8059 /* Project object */;
+}
