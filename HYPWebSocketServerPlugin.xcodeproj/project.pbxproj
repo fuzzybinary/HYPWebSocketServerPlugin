@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22B150F02034A1620093FC6C /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B150EE2034A1250093FC6C /* timer.png */; };
+		22B150F12034A1620093FC6C /* timer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B150ED2034A1240093FC6C /* timer@2x.png */; };
+		22B150F22034A1620093FC6C /* timer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B150EC2034A1240093FC6C /* timer@3x.png */; };
 		22B1728A201FCA6B00DC8059 /* HYPWebSocketServerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B17284201FCA6A00DC8059 /* HYPWebSocketServerPlugin.m */; };
 		22B1728B201FCA6B00DC8059 /* HYPWebSocketMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B17285201FCA6A00DC8059 /* HYPWebSocketMessage.h */; };
 		22B1728C201FCA6B00DC8059 /* HYPWebSocketServerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B17286201FCA6A00DC8059 /* HYPWebSocketServerPlugin.h */; };
 		22B1728D201FCA6B00DC8059 /* HYPWebSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B17287201FCA6A00DC8059 /* HYPWebSocketMessage.m */; };
 		22B1728E201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B17288201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h */; };
 		22B1728F201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B17289201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m */; };
-		22B17291201FCA8400DC8059 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 22B17290201FCA8400DC8059 /* Resources */; };
 		22B17294201FCC5000DC8059 /* PocketSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B17293201FCC5000DC8059 /* PocketSocket.framework */; };
 		22B17296201FCD2C00DC8059 /* HyperionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B17295201FCD2C00DC8059 /* HyperionCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22B150EC2034A1240093FC6C /* timer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@3x.png"; sourceTree = "<group>"; };
+		22B150ED2034A1240093FC6C /* timer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@2x.png"; sourceTree = "<group>"; };
+		22B150EE2034A1250093FC6C /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
 		22B17279201FCA4400DC8059 /* HYPWebSocketServerPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HYPWebSocketServerPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B1727D201FCA4400DC8059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B17284201FCA6A00DC8059 /* HYPWebSocketServerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPWebSocketServerPlugin.m; sourceTree = "<group>"; };
@@ -27,7 +32,6 @@
 		22B17287201FCA6A00DC8059 /* HYPWebSocketMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPWebSocketMessage.m; sourceTree = "<group>"; };
 		22B17288201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPWebSocketServerPluginModule.h; sourceTree = "<group>"; };
 		22B17289201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPWebSocketServerPluginModule.m; sourceTree = "<group>"; };
-		22B17290201FCA8400DC8059 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		22B17293201FCC5000DC8059 /* PocketSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PocketSocket.framework; path = Carthage/Build/iOS/PocketSocket.framework; sourceTree = "<group>"; };
 		22B17295201FCD2C00DC8059 /* HyperionCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HyperionCore.framework; path = Carthage/Build/iOS/HyperionCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +49,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22B150EF2034A12E0093FC6C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22B150EE2034A1250093FC6C /* timer.png */,
+				22B150ED2034A1240093FC6C /* timer@2x.png */,
+				22B150EC2034A1240093FC6C /* timer@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		22B1726F201FCA4400DC8059 = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +79,7 @@
 		22B1727B201FCA4400DC8059 /* HYPWebSocketServerPlugin */ = {
 			isa = PBXGroup;
 			children = (
-				22B17290201FCA8400DC8059 /* Resources */,
+				22B150EF2034A12E0093FC6C /* Resources */,
 				22B17285201FCA6A00DC8059 /* HYPWebSocketMessage.h */,
 				22B17287201FCA6A00DC8059 /* HYPWebSocketMessage.m */,
 				22B17286201FCA6A00DC8059 /* HYPWebSocketServerPlugin.h */,
@@ -157,7 +171,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22B17291201FCA8400DC8059 /* Resources in Resources */,
+				22B150F02034A1620093FC6C /* timer.png in Resources */,
+				22B150F12034A1620093FC6C /* timer@2x.png in Resources */,
+				22B150F22034A1620093FC6C /* timer@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
