@@ -456,10 +456,10 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask delegate:(id <NSU
         // The method signatures here are close enough that we can use the same logic to inject into all of them.
         const SEL selectors[] = {
             @selector(dataTaskWithRequest:completionHandler:),
-            @selector(dataTaskWithURL:completionHandler:),
+            //@selector(dataTaskWithURL:completionHandler:),
             @selector(downloadTaskWithRequest:completionHandler:),
             @selector(downloadTaskWithResumeData:completionHandler:),
-            @selector(downloadTaskWithURL:completionHandler:)
+            //@selector(downloadTaskWithURL:completionHandler:)
         };
         
         const int numSelectors = sizeof(selectors) / sizeof(SEL);
@@ -547,7 +547,9 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask delegate:(id <NSU
 
 + (NSURLSessionAsyncCompletion)asyncCompletionWrapperForRequestID:(NSString *)requestID mechanism:(NSString *)mechanism completion:(NSURLSessionAsyncCompletion)completion
 {
+    NSLog(@"2: request: %@ mechanism: %@", requestID, mechanism);
     NSURLSessionAsyncCompletion completionWrapper = ^(id fileURLOrData, NSURLResponse *response, NSError *error) {
+        NSLog(@"3: request: %@ mechanism: %@", requestID, mechanism);
         for(NetworkSniffer* sniffer in [[self sharedInstance] sniffers]) {
             [sniffer responseReceivedWithRequestID:requestID response:response];
         }

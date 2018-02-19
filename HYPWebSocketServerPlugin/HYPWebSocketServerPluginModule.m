@@ -180,11 +180,13 @@
 
 - (void)server:(PSWebSocketServer *)server webSocket:(PSWebSocket *)webSocket didFailWithError:(NSError *)error
 {
+    [[NetworkObserver sharedInstance] removeNetworkSnifferForSocket:webSocket];
     [self.openSockets removeObject:webSocket];
 }
 
 - (void)server:(PSWebSocketServer *)server webSocket:(PSWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
 {
+    [[NetworkObserver sharedInstance] removeNetworkSnifferForSocket:webSocket];
     [self.openSockets removeObject:webSocket];
 }
 

@@ -39,9 +39,11 @@
 
 -(void)responseReceivedWithRequestID:(NSString *)requestID response:(NSURLResponse *)response
 {
+    NSHTTPURLResponse* _Nullable httpResponse = [response isKindOfClass:[NSHTTPURLResponse class]] ? (NSHTTPURLResponse*)response : nil;
     NSDictionary* data = @{@"type": @"response",
                            @"request_id": requestID,
                            @"request_url": [response.URL absoluteString],
+                           @"status_code": (httpResponse != nil ? @([httpResponse statusCode]) : [NSNull null])
                            };
     HYPWebSocketMessage* message = [[HYPWebSocketMessage alloc] initWithMessage:@"sniff_response" data:data];
     [self.socket send:[message asJson]];
