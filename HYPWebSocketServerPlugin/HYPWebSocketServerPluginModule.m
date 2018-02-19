@@ -25,6 +25,9 @@
 
 @import PocketSocket;
 
+#import "NetworkObserver.h"
+#import "NetworkSniffer.h"
+
 @interface HYPWebSocketServerPluginModule () <HYPPluginMenuItemDelegate, PSWebSocketServerDelegate>
 
 @property(strong, nonatomic) PSWebSocketServer* server;
@@ -62,11 +65,21 @@
     }
 }
 
-- (void)defaultMessageHandler:(HYPWebSocketMessage*)message
+- (void)defaultMessageHandler:(HYPWebSocketMessage*)message fromSocket:(PSWebSocket*)socket;
 {
-    // TODO: Support some default messages
-    
-    [self.delegate websocketPlugin:self didReceiveMessage:message];
+    if([message.message isEqualToString:@"sniff"]) {
+        if([[message.data valueForKey:@"enabled"] boolValue]) {
+            NetworkSniffer* sniffer = [[NetworkSniffer alloc] initWithSocket:socket];
+            [[NetworkObserver sharedInstance] addNetworkSniffer:sniffer];
+        } else {
+            [[NetworkObserver sharedInstance] removeNetworkSnifferForSocket:socket];
+        }
+        // Reply with ack
+        HYPWebSocketMessage* ackMessage = [[HYPWebSocketMessage alloc] initWithMessage:@"sniff_sniff" data:message.data];
+        [socket send:[ackMessage asJson]];
+    } else {
+        [self.delegate websocketPlugin:self didReceiveMessage:message];
+    }
 }
 
 - (UIView*)pluginMenuItem
@@ -104,6 +117,7 @@
         self.server.delegate = self;
         [self.server start];
         [_pluginMenuItem setSelected:YES animated:YES];
+        [NetworkObserver setEnabled:YES];
     }
     else
     {
@@ -116,6 +130,7 @@
     [self.server stop];
     self.server = nil;
     [_pluginMenuItem setSelected:NO animated:YES];
+    [NetworkObserver setEnabled:NO];
 }
 
 #pragma mark - PSWebSocketServerDelegate
@@ -157,7 +172,7 @@
             }
             else
             {
-                [self defaultMessageHandler:finalMessage];
+                [self defaultMessageHandler:finalMessage fromSocket:webSocket];
             }
         }
     }

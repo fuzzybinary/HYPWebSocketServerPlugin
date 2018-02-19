@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223BFE0B20362AED00AD2F6E /* NetworkObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 223BFE0920362AED00AD2F6E /* NetworkObserver.h */; };
+		223BFE0E203B1B1900AD2F6E /* NetworkObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 223BFE0D203B1B1900AD2F6E /* NetworkObserver.m */; };
+		223BFE11203B1B5100AD2F6E /* NetworkSniffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 223BFE0F203B1B5100AD2F6E /* NetworkSniffer.h */; };
+		223BFE12203B1B5100AD2F6E /* NetworkSniffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 223BFE10203B1B5100AD2F6E /* NetworkSniffer.m */; };
 		22B150F02034A1620093FC6C /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B150EE2034A1250093FC6C /* timer.png */; };
 		22B150F12034A1620093FC6C /* timer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B150ED2034A1240093FC6C /* timer@2x.png */; };
 		22B150F22034A1620093FC6C /* timer@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22B150EC2034A1240093FC6C /* timer@3x.png */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		223BFE0920362AED00AD2F6E /* NetworkObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkObserver.h; sourceTree = "<group>"; };
+		223BFE0D203B1B1900AD2F6E /* NetworkObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkObserver.m; sourceTree = "<group>"; };
+		223BFE0F203B1B5100AD2F6E /* NetworkSniffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkSniffer.h; sourceTree = "<group>"; };
+		223BFE10203B1B5100AD2F6E /* NetworkSniffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkSniffer.m; sourceTree = "<group>"; };
 		22B150EC2034A1240093FC6C /* timer@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@3x.png"; sourceTree = "<group>"; };
 		22B150ED2034A1240093FC6C /* timer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@2x.png"; sourceTree = "<group>"; };
 		22B150EE2034A1250093FC6C /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
@@ -49,6 +57,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223BFE0820362ABE00AD2F6E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				223BFE0D203B1B1900AD2F6E /* NetworkObserver.m */,
+				223BFE0920362AED00AD2F6E /* NetworkObserver.h */,
+				223BFE0F203B1B5100AD2F6E /* NetworkSniffer.h */,
+				223BFE10203B1B5100AD2F6E /* NetworkSniffer.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		22B150EF2034A12E0093FC6C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				22B150EF2034A12E0093FC6C /* Resources */,
+				223BFE0820362ABE00AD2F6E /* Network */,
 				22B17285201FCA6A00DC8059 /* HYPWebSocketMessage.h */,
 				22B17287201FCA6A00DC8059 /* HYPWebSocketMessage.m */,
 				22B17286201FCA6A00DC8059 /* HYPWebSocketServerPlugin.h */,
@@ -110,6 +130,8 @@
 				22B1728E201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.h in Headers */,
 				22B1728B201FCA6B00DC8059 /* HYPWebSocketMessage.h in Headers */,
 				22B1728C201FCA6B00DC8059 /* HYPWebSocketServerPlugin.h in Headers */,
+				223BFE11203B1B5100AD2F6E /* NetworkSniffer.h in Headers */,
+				223BFE0B20362AED00AD2F6E /* NetworkObserver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +208,8 @@
 			files = (
 				22B1728A201FCA6B00DC8059 /* HYPWebSocketServerPlugin.m in Sources */,
 				22B1728F201FCA6B00DC8059 /* HYPWebSocketServerPluginModule.m in Sources */,
+				223BFE0E203B1B1900AD2F6E /* NetworkObserver.m in Sources */,
+				223BFE12203B1B5100AD2F6E /* NetworkSniffer.m in Sources */,
 				22B1728D201FCA6B00DC8059 /* HYPWebSocketMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

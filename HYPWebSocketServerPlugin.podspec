@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
   }
 
   s.dependency "HyperioniOS/Core"
-  s.dependency "PocketSocket"
+  s.dependency "JWPocketSocket", "~>0.7.0"
 
 end
