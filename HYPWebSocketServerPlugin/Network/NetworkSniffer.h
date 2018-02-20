@@ -23,9 +23,9 @@
 - (void)responseReceivedWithRequestID:(NSString*_Nonnull)requestID response:(NSURLResponse *_Nullable)response;
 
 /// Call when HTTP request has finished loading.
-- (void)loadingFinishedWithRequestID:(NSString *_Nonnull)requestID responseBody:(NSData *_Nonnull)responseBody;
+- (void)loadingFinishedWithRequestID:(NSString *_Nonnull)requestID response:(NSURLResponse*_Nullable)response responseBody:(NSData *_Nonnull)responseBody;
 
 /// Call when HTTP request has failed to load.
-- (void)loadingFailedWithRequestID:(NSString *_Nonnull)requestID error:(NSError *_Nonnull)error;
+- (void)loadingFailedWithRequestID:(NSString *_Nonnull)requestID response:(NSURLResponse*_Nullable)response error:(NSError *_Nonnull)error;
 
 @end

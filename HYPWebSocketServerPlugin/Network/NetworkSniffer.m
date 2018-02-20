@@ -39,35 +39,31 @@
 
 -(void)responseReceivedWithRequestID:(NSString *)requestID response:(NSURLResponse *)response
 {
-    NSHTTPURLResponse* _Nullable httpResponse = [response isKindOfClass:[NSHTTPURLResponse class]] ? (NSHTTPURLResponse*)response : nil;
-    NSDictionary* data = @{@"type": @"response",
-                           @"request_id": requestID,
-                           @"request_url": [response.URL absoluteString],
-                           @"status_code": (httpResponse != nil ? @([httpResponse statusCode]) : [NSNull null])
-                           };
-    HYPWebSocketMessage* message = [[HYPWebSocketMessage alloc] initWithMessage:@"sniff_response" data:data];
-    [self.socket send:[message asJson]];
+    // Ignore until the request is complete (or canceled)
 }
 
-- (void)loadingFinishedWithRequestID:(NSString *)requestID responseBody:(NSData *)responseBody
+- (void)loadingFinishedWithRequestID:(NSString *)requestID response:(NSURLResponse*)response responseBody:(NSData *)responseBody
 {
     NSString* strData = [responseBody base64EncodedStringWithOptions:0];
+    NSHTTPURLResponse* httpResponse = [response isKindOfClass:[NSHTTPURLResponse class]] ? (NSHTTPURLResponse*)response : nil;
     NSDictionary* data = @{@"type": @"response_body",
                            @"request_id": requestID,
+                           @"status_code": (httpResponse != nil ? @([httpResponse statusCode]) : [NSNull null]),
                            @"body": strData
                            };
     HYPWebSocketMessage* message = [[HYPWebSocketMessage alloc] initWithMessage:@"sniff_response" data:data];
     [self.socket send:[message asJson]];
 }
 
-- (void)loadingFailedWithRequestID:(NSString *)requestID error:(NSError *)error
+- (void)loadingFailedWithRequestID:(NSString *)requestID response:(NSURLResponse*)response error:(NSError *)error
 {
+    NSHTTPURLResponse* httpResponse = [response isKindOfClass:[NSHTTPURLResponse class]] ? (NSHTTPURLResponse*)response : nil;
     NSDictionary* data = @{@"type": @"response_error",
                            @"request_id": requestID,
+                           @"status_code": (httpResponse != nil ? @([httpResponse statusCode]) : [NSNull null]),
                            @"error": [error localizedDescription]};
     HYPWebSocketMessage* message = [[HYPWebSocketMessage alloc] initWithMessage:@"sniff_response" data:data];
     [self.socket send:[message asJson]];
-    
 }
 
 @end

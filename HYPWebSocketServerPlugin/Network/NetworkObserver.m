@@ -26,6 +26,7 @@ typedef void (^NSURLSessionAsyncCompletion)(id fileURLOrData, NSURLResponse *res
 @interface InternalRequestState : NSObject
 
 @property (nonatomic, copy) NSURLRequest *request;
+@property (nonatomic, copy) NSURLResponse* response;
 @property (nonatomic, strong) NSMutableData *dataAccumulator;
 
 @end
@@ -383,9 +384,9 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask delegate:(id <NSU
                     for(NetworkSniffer*  sniffer in [[NetworkObserver sharedInstance] sniffers]) {
                         [sniffer responseReceivedWithRequestID:requestID response:response];
                         if (connectionError) {
-                            [sniffer loadingFailedWithRequestID:requestID error:connectionError];
+                            [sniffer loadingFailedWithRequestID:requestID response:response error:connectionError];
                         } else {
-                            [sniffer loadingFinishedWithRequestID:requestID responseBody:data];
+                            [sniffer loadingFinishedWithRequestID:requestID response:response responseBody:data];
                         }
                     }
 
@@ -425,9 +426,9 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask delegate:(id <NSU
                 for(NetworkSniffer* sniffer in [[NetworkObserver sharedInstance] sniffers]) {
                     [sniffer responseReceivedWithRequestID:requestID response:temporaryResponse];
                     if(temporaryError) {
-                        [sniffer loadingFailedWithRequestID:requestID error:temporaryError];
+                        [sniffer loadingFailedWithRequestID:requestID response:temporaryResponse error:temporaryError];
                     } else {
-                        [sniffer loadingFinishedWithRequestID:requestID responseBody:data];
+                        [sniffer loadingFinishedWithRequestID:requestID response:temporaryResponse responseBody:data];
                     }
                 }
                 if (error) {
@@ -562,9 +563,9 @@ didBecomeDownloadTask:(NSURLSessionDownloadTask *)downloadTask delegate:(id <NSU
         
         for(NetworkSniffer* sniffer in [[self sharedInstance] sniffers]) {
             if(error) {
-                [sniffer loadingFailedWithRequestID:requestID error:error];
+                [sniffer loadingFailedWithRequestID:requestID response:response error:error];
             } else {
-                [sniffer loadingFinishedWithRequestID:requestID responseBody:data];
+                [sniffer loadingFinishedWithRequestID:requestID response:response responseBody:data];
             }
         }
         
@@ -1029,6 +1030,7 @@ static char const * const kFLEXRequestIDKey = "kFLEXRequestIDKey";
             dataAccumulator = [[NSMutableData alloc] initWithCapacity:(NSUInteger)response.expectedContentLength];
         }
         requestState.dataAccumulator = dataAccumulator;
+        requestState.response = response;
         
         for(NetworkSniffer* sniffer in self.sniffers) {
             [sniffer responseReceivedWithRequestID:requestID response:response];
@@ -1053,7 +1055,7 @@ static char const * const kFLEXRequestIDKey = "kFLEXRequestIDKey";
         NSString *requestID = [[self class] requestIDForConnectionOrTask:connection];
         InternalRequestState *requestState = [self requestStateForRequestID:requestID];
         for(NetworkSniffer* sniffer in self.sniffers) {
-            [sniffer loadingFinishedWithRequestID:requestID responseBody:requestState.dataAccumulator];
+            [sniffer loadingFinishedWithRequestID:requestID response:requestState.response  responseBody:requestState.dataAccumulator];
         }
         [self removeRequestStateForRequestID:requestID];
     }];
@@ -1069,7 +1071,7 @@ static char const * const kFLEXRequestIDKey = "kFLEXRequestIDKey";
         // These are pretty common and clutter up the logs. Only record the failure if the recorder already knows about the request through willSendRequest:...
         if (requestState.request) {
             for(NetworkSniffer* sniffer in self.sniffers) {
-                [sniffer loadingFailedWithRequestID:requestID error:error];
+                [sniffer loadingFailedWithRequestID:requestID response:requestState.response error:error];
             }
         }
         
@@ -1152,9 +1154,9 @@ static char const * const kFLEXRequestIDKey = "kFLEXRequestIDKey";
         
         for (NetworkSniffer* sniffer in self.sniffers) {
             if (error) {
-                [sniffer loadingFailedWithRequestID:requestID error:error];
+                [sniffer loadingFailedWithRequestID:requestID response:requestState.response error:error];
             } else {
-                [sniffer loadingFinishedWithRequestID:requestID responseBody:requestState.dataAccumulator];
+                [sniffer loadingFinishedWithRequestID:requestID response:requestState.response responseBody:requestState.dataAccumulator];
             }
         }
         
