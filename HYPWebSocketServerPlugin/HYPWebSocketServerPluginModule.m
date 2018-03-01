@@ -91,6 +91,7 @@
     
     HYPPluginMenuItem *pluginItem = [[HYPPluginMenuItem alloc] init];
     pluginItem.delegate = self;
+    pluginItem.accessibilityLabel = @"hyp_WebSocketServer";
     [pluginItem bindWithTitle:[self pluginMenuItemTitle] image:[self pluginMenuItemImage]];
     
     _pluginMenuItem = pluginItem;
