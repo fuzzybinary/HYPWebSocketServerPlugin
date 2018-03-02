@@ -42,12 +42,14 @@ Afterwords it will send the following messages for each network call:
 {
     "message": "sniff_response",
     "data" {
-        "type": "will_send" | "response_body",
+        "type": "will_send" | "response_body" | "response_error",
         "request_id": "<uuid for request>",
         "request_url": "<url of request>",
         // In the case of response_body type
-        "status_code": nulll | http_status_code
-        "body": "<base64 encoded body of response>"
+        "status_code": null | http_status_code,
+        "body": "<base64 encoded body of response>",
+        // In the case of respons_error type
+        "error": "<localized description of the error>"
     }
 }
 ```

@@ -49,6 +49,7 @@
     NSDictionary* data = @{@"type": @"response_body",
                            @"request_id": requestID,
                            @"status_code": (httpResponse != nil ? @([httpResponse statusCode]) : [NSNull null]),
+                           @"request_url": [response.URL absoluteString],
                            @"body": strData
                            };
     HYPWebSocketMessage* message = [[HYPWebSocketMessage alloc] initWithMessage:@"sniff_response" data:data];
@@ -61,6 +62,7 @@
     NSDictionary* data = @{@"type": @"response_error",
                            @"request_id": requestID,
                            @"status_code": (httpResponse != nil ? @([httpResponse statusCode]) : [NSNull null]),
+                           @"request_url": [response.URL absoluteString],
                            @"error": [error localizedDescription]};
     HYPWebSocketMessage* message = [[HYPWebSocketMessage alloc] initWithMessage:@"sniff_response" data:data];
     [self.socket send:[message asJson]];
